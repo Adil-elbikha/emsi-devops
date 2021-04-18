@@ -1,0 +1,5 @@
+adil@ubuntu$ curl -sI 34.74.132.59 | grep X-Served-By
+X-adil-By: 03-web-01
+adil@ubuntu$ curl -sI 35.231.110.175 | grep X-Served-By
+X-adil-By: 03-web-02
+adil@ubuntu$

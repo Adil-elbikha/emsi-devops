@@ -1,5 +1,10 @@
-adil@ubuntu$ curl -sI 34.74.132.59 | grep X-Served-By
-X-adil-By: 03-web-01
-adil@ubuntu$ curl -sI 35.231.110.175 | grep X-Served-By
-X-adil-By: 03-web-02
-adil@ubuntu$
+#!/usr/bin/env bash
+# shellcheck disable=SC2154
+# configures a brand new Ubuntu machine
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo sed -i "11i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+sudo service nginx start
